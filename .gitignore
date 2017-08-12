@@ -30,3 +30,30 @@ Desktop.ini
 
 # Build files
 dist/*
+
+#### CLI ####
+
+# compiled output
+/demo/dist
+/tmp
+/out-tsc
+
+# IDE - VSCode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+yarn-error.log
+
+# e2e
+/e2e/*.js
+/e2e/*.map
