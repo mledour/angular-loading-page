@@ -21,8 +21,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "ng-library.js",
-    "flatModuleId": "ng-library"
+    "flatModuleOutFile": "angular-loading-page.js",
+    "flatModuleId": "angular-loading-page"
   },
   "files": [
     "./index.ts"

@@ -1,0 +1,20 @@
+<lte-box lteTitle="Download" [collapsable]="false" [removable]="false">
+  <p>NgLoadingPage is available at npm, if you have an existing application run the following command to download it to your project.</p>
+  <pre><code class="language-bash">npm install angular-loading-page --save</code></pre>
+</lte-box>
+
+<lte-box lteTitle="Load Configuration" [collapsable]="false" [removable]="false">
+  <p>Angular Loading Page is distributed in commonjs format, a module manager of your choice is required and this guide provides samples for SystemJS, WebPack and Angular CLI.</p>
+</lte-box>
+
+<lte-box lteTitle="Import" [collapsable]="false" [removable]="false">
+  <p>UI components are configured as modules, once Angular Loading Page is downloaded and configured, modules and apis can be imported from 'angular-loading-page' shorthand in your application code.</p>
+  <pre><code class="language-typescript">import &#123; LoadingPageModule &#125; from 'angular-loading-page';         //Loading directive
+import &#123; MaterialBarModule &#125; from 'angular-loading-page';         //Loading animation component</code></pre>
+</lte-box>
+
+<lte-box lteTitle="Usage" [collapsable]="false" [removable]="false">
+  <pre><code class="language-html">&lt;div *mkLoadingPage [checkPendingRoute]="true" [checkPendingHttp]="true"&gt;
+  &lt;mk-material-bar colorOne=&quot;#dd4b39&quot; colorTwo=&quot;#00a65a&quot; colorThree=&quot;#f39c12&quot;&gt;&lt;/mk-material-bar&gt;
+&lt;/div&gt;</code></pre>
+</lte-box>

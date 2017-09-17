@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ng-library"
+    "name": "angular-loading-page-demo"
   },
   "apps": [
     {
@@ -19,9 +19,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../../node_modules/font-awesome/css/font-awesome.css",
+        "../../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../../node_modules/prismjs/themes/prism-tomorrow.css",
+        "../../node_modules/admin-lte/dist/css/AdminLTE.css",
+        "../../node_modules/admin-lte/dist/css/skins/_all-skins.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../../node_modules/prismjs/prism.js",
+        "../../node_modules/prismjs/components/prism-typescript.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

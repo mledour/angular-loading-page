@@ -1,0 +1,13 @@
+<lte-box [solid]="true" [collapsable]="false" [removable]="false">
+  <p>This is an component to test the Http interceptor of the structural directive "ngLoading".</p>
+  <p>You can disable this feature like this:</p>
+  <pre><code class="language-html">&lt;div *mkLoadingPage [checkPendingHttp]="false"&gt;
+  &lt;mk-material-bar colorOne=&quot;#dd4b39&quot; colorTwo=&quot;#00a65a&quot; colorThree=&quot;#f39c12&quot;&gt;&lt;/mk-material-bar&gt;
+&lt;/div&gt;</code></pre>
+</lte-box>
+
+<button class="btn btn-sm btn-success" (click)="startRequest()">Start http request</button><br/><br/>
+
+<lte-box *ngIf="response" lteTitle="Http Response" [collapsable]="false" [removable]="false">
+  <pre style="max-height: 300px; overflow: scroll;">{{response}}</pre>
+</lte-box>
