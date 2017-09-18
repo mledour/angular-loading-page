@@ -75,7 +75,7 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "dependencies": {
+  "peersDependencies": {
     "spinkit": "^1.2.5"
   }
 }
