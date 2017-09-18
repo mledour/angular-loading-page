@@ -4,91 +4,104 @@
       <tr>
         <th>HTML Tag</th>
         <th>Module Name</th>
+        <th>Options</th>
         <th>Loader</th>
       </tr>
     <tbody>
       <tr>
         <td>chasing-dots</td>
         <td>ChasingDotsModule</td>
+        <td>colorOne, colorTwo</td>
         <td>
-          <a (click)="toggleLoader('chasingDots')" class="label " [ngClass]="{'label-success': !loaderState.chasingDots, 'label-danger': loaderState.chasingDots}">{{loaderState.chasingDots ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('chasingDots')" class="label" [ngClass]="{'label-success': !loaderState.chasingDots, 'label-danger': loaderState.chasingDots}">{{loaderState.chasingDots ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>circle</td>
         <td>CircleModule</td>
+        <td>color</td>
         <td>
-          <a (click)="toggleLoader('circle')" class="label " [ngClass]="{'label-success': !loaderState.circle, 'label-danger': loaderState.circle}">{{loaderState.circle ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('circle')" class="label" [ngClass]="{'label-success': !loaderState.circle, 'label-danger': loaderState.circle}">{{loaderState.circle ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>cube-grid</td>
         <td>CubeGridModule</td>
+        <td>color</td>
         <td>
-          <a (click)="toggleLoader('cubeGrid')" class="label " [ngClass]="{'label-success': !loaderState.cubeGrid, 'label-danger': loaderState.cubeGrid}">{{loaderState.cubeGrid ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('cubeGrid')" class="label" [ngClass]="{'label-success': !loaderState.cubeGrid, 'label-danger': loaderState.cubeGrid}">{{loaderState.cubeGrid ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>double-bounce</td>
         <td>DoubleBounceModule</td>
+        <td>colorOne, colorTwo</td>
         <td>
-          <a (click)="toggleLoader('doubleBounce')" class="label " [ngClass]="{'label-success': !loaderState.doubleBounce, 'label-danger': loaderState.doubleBounce}">{{loaderState.doubleBounce ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('doubleBounce')" class="label" [ngClass]="{'label-success': !loaderState.doubleBounce, 'label-danger': loaderState.doubleBounce}">{{loaderState.doubleBounce ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>fading-circle</td>
         <td>FadingCircleModule</td>
+        <td>color</td>
         <td>
-          <a (click)="toggleLoader('fadingCircle')" class="label " [ngClass]="{'label-success': !loaderState.fadingCircle, 'label-danger': loaderState.fadingCircle}">{{loaderState.fadingCircle ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('fadingCircle')" class="label" [ngClass]="{'label-success': !loaderState.fadingCircle, 'label-danger': loaderState.fadingCircle}">{{loaderState.fadingCircle ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>folding-cube</td>
         <td>FoldingCubeModule</td>
+        <td>color</td>
         <td>
-          <a (click)="toggleLoader('foldingCube')" class="label " [ngClass]="{'label-success': !loaderState.foldingCube, 'label-danger': loaderState.foldingCube}">{{loaderState.foldingCube ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('foldingCube')" class="label" [ngClass]="{'label-success': !loaderState.foldingCube, 'label-danger': loaderState.foldingCube}">{{loaderState.foldingCube ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>material-bar</td>
         <td>MaterialBarModule</td>
+        <td>colorOne, colorTwo, colorThree</td>
         <td>
-          <a (click)="toggleLoader('materialBar')" class="label " [ngClass]="{'label-success': !loaderState.materialBar, 'label-danger': loaderState.materialBar}">{{loaderState.materialBar ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('materialBar')" class="label" [ngClass]="{'label-success': !loaderState.materialBar, 'label-danger': loaderState.materialBar}">{{loaderState.materialBar ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>pulse</td>
         <td>PulseModule</td>
+        <td>color</td>
         <td>
-          <a (click)="toggleLoader('pulse')" class="label " [ngClass]="{'label-success': !loaderState.pulse, 'label-danger': loaderState.pulse}">{{loaderState.pulse ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('pulse')" class="label" [ngClass]="{'label-success': !loaderState.pulse, 'label-danger': loaderState.pulse}">{{loaderState.pulse ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>sliding-bar</td>
         <td>SlidingBarModule</td>
+        <td>colorOne, colorTwo</td>
         <td>
-          <a (click)="toggleLoader('slidingBar')" class="label " [ngClass]="{'label-success': !loaderState.slidingBar, 'label-danger': loaderState.slidingBar}">{{loaderState.slidingBar ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('slidingBar')" class="label" [ngClass]="{'label-success': !loaderState.slidingBar, 'label-danger': loaderState.slidingBar}">{{loaderState.slidingBar ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>three-bounce</td>
         <td>ThreeBounceModule</td>
+        <td>colorOne, colorTwo, colorThree</td>
         <td>
-          <a (click)="toggleLoader('threeBounce')" class="label " [ngClass]="{'label-success': !loaderState.threeBounce, 'label-danger': loaderState.threeBounce}">{{loaderState.threeBounce ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('threeBounce')" class="label" [ngClass]="{'label-success': !loaderState.threeBounce, 'label-danger': loaderState.threeBounce}">{{loaderState.threeBounce ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>wandering-cubes</td>
         <td>WanderingCubesModule</td>
+        <td>colorOne, colorTwo</td>
         <td>
-          <a (click)="toggleLoader('wanderingCubes')" class="label " [ngClass]="{'label-success': !loaderState.wanderingCubes, 'label-danger': loaderState.wanderingCubes}">{{loaderState.wanderingCubes ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('wanderingCubes')" class="label" [ngClass]="{'label-success': !loaderState.wanderingCubes, 'label-danger': loaderState.wanderingCubes}">{{loaderState.wanderingCubes ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
       <tr>
         <td>wave</td>
         <td>WaveModule</td>
+        <td>color</td>
         <td>
-          <a (click)="toggleLoader('wave')" class="label " [ngClass]="{'label-success': !loaderState.wave, 'label-danger': loaderState.wave}">{{loaderState.wave ? 'Stop' : 'Play'}}</a>
+          <a (click)="toggleLoader('wave')" class="label" [ngClass]="{'label-success': !loaderState.wave, 'label-danger': loaderState.wave}">{{loaderState.wave ? 'Stop' : 'Play'}}</a>
         <td>
       </tr>
     </tbody>
@@ -104,7 +117,7 @@
 </lte-box>
 
 <lte-box lteTitle="Cube Grid" *ngIf="loaderState.cubeGrid" [collapsable]="false" [removable]="false">
-  <mk-circle></mk-circle>
+  <mk-cube-grid></mk-cube-grid>
 </lte-box>
 
 <lte-box lteTitle="Double Bounce" *ngIf="loaderState.doubleBounce" [collapsable]="false" [removable]="false">
