@@ -29,12 +29,12 @@ Desktop.ini
 **/*.ngfactory.ts
 
 # Build files
-#dist/*
+dist/*
 
 #### CLI ####
 
 # compiled output
-/demo/dist
+#/demo/dist
 /tmp
 /out-tsc
 
