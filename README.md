@@ -1,6 +1,6 @@
 # angular-loading-page
 
-Loading page directives for angular 2+
+Automatic loading page directive & animated loaders components for angular 2+
 
 ## Installation
 
@@ -14,6 +14,12 @@ $ npm install angular-loading-page --save
 
 See Library [homepage](https://mika-el.github.io/angular-loading-page/#/)
 
-## License
+## Dependencies
 
-MIT © [Mik@](mailto:michael.ledour@gmail.com)
+* "spinkit": "^1.2.5"
+
+## Todos
+
+Add colors params to components
+
+
