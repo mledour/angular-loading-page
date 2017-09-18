@@ -38,15 +38,19 @@ export class LoadingPageDirective {
   private init() {
     if(this.checkPendingHttp) {
       this.httpObservableService.isPendingRequests.subscribe(value =>{
-        this.isPendingRequests = value;
-        this.isVisible();
+        setTimeout(() => {
+          this.isPendingRequests = value;
+          this.isVisible();
+        });
       });
     }
 
     if(this.checkPendingRoute) {
       this.routeInterceptorService.isPendingRoute.subscribe(value =>{
-        this.isPendingRoute = value;
-        this.isVisible();
+        setTimeout(() => {
+          this.isPendingRoute = value;
+          this.isVisible();
+        });
       });
     }
   }
@@ -61,8 +65,10 @@ export class LoadingPageDirective {
       this.viewContainer.clear();
       this.hasView = false;
     } else if (!this.hasView && (this.isPendingRequests || this.isPendingRoute)) {
-      this.viewContainer.createEmbeddedView(this.templateRef);
-      this.hasView = true;
+      setTimeout(() => {
+        this.viewContainer.createEmbeddedView(this.templateRef);
+        this.hasView = true;
+      });
     }
   }
 }
