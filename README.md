@@ -16,10 +16,8 @@ See Library [homepage](https://mika-el.github.io/angular-loading-page/#/)
 
 ## Dependencies
 
-* "spinkit": "^1.2.5"
+* none
 
 ## Todos
 
 Add colors params to components
-
-
