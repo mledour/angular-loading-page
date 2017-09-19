@@ -14,4 +14,4 @@ import { MaterialbarComponent } from './material-bar.component';
     MaterialbarComponent
   ]
 })
-export class MaterialbarModule {}
+export class MaterialBarModule {}
