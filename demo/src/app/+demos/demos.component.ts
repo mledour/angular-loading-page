@@ -6,7 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./demos.component.css']
 })
 export class DemosComponent {
-  public loaderState = {};
+  public loaderState = {
+    chasingDots: false,
+    circle: false,
+    cubeGrid: false,
+    doubleBounce: false,
+    fadingCircle: false,
+    foldingCube: false,
+    materialBar: false,
+    pulse: false,
+    slidingBar: false,
+    threeBounce: false,
+    wanderingCubes: false,
+    wave: false
+  };
   public showLoaderBox: boolean;
 
   /**

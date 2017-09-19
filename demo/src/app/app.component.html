@@ -7,8 +7,10 @@
     <app-sidebar-left-inner></app-sidebar-left-inner>
   </lte-sidebar-left>
   <lte-content>
-    <div *mkLoadingPage class="lte-content-before-header" lte-content-before-header>
-      <mk-material-bar colorOne="#dd4b39" colorTwo="#00a65a" colorThree="#f39c12"></mk-material-bar>
+    <div lte-content-before-header>
+      <div *mkLoadingPage="{checkPendingHttp: true, checkPendingRoute: true}">
+        <mk-material-bar></mk-material-bar>
+      </div>
     </div>
     <router-outlet></router-outlet>
   </lte-content>

@@ -22,7 +22,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     BoxModule,
     CoreModule,
-    LoadingPageModule, ChasingDotsModule, CircleModule, CubeGridModule, DoubleBounceModule, FadingCircleModule, FoldingCubeModule, MaterialBarModule, PulseModule, SlidingBarModule, ThreeBounceModule, WanderingCubesModule, WaveModule,
+    LoadingPageModule, MaterialBarModule,
     LayoutModule.forRoot(adminLteConf),
   ],
   bootstrap: [AppComponent]
