@@ -2,6 +2,17 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 import { HttpObservableService } from './interceptors/http-observable.service';
 import { RouteInterceptorService } from './interceptors/route-interceptor.service';
 
+/*
+ * MkLoadingPage Interface
+ */
+interface MkLoadingPage {
+    checkPendingHttp: boolean;
+    checkPendingRoute: boolean;
+}
+
+/*
+ * mkLoadingPage Directive
+ */
 @Directive({
   selector: '[mkLoadingPage]',
 })
@@ -11,8 +22,7 @@ export class LoadingPageDirective {
 
   private hasView = false;
 
-  @Input() checkPendingHttp = true;
-  @Input() checkPendingRoute = true;
+  @Input() mkLoadingPage: MkLoadingPage;
 
   /**
    * @method constructor
@@ -36,7 +46,7 @@ export class LoadingPageDirective {
    * @return {[type]} [description]
    */
   private init() {
-    if(this.checkPendingHttp) {
+    if(!this.mkLoadingPage || this.mkLoadingPage.checkPendingHttp) {
       this.httpObservableService.isPendingRequests.subscribe(value =>{
         setTimeout(() => {
           this.isPendingRequests = value;
@@ -45,7 +55,7 @@ export class LoadingPageDirective {
       });
     }
 
-    if(this.checkPendingRoute) {
+    if(!this.mkLoadingPage || this.mkLoadingPage.checkPendingRoute) {
       this.routeInterceptorService.isPendingRoute.subscribe(value =>{
         setTimeout(() => {
           this.isPendingRoute = value;
@@ -65,10 +75,8 @@ export class LoadingPageDirective {
       this.viewContainer.clear();
       this.hasView = false;
     } else if (!this.hasView && (this.isPendingRequests || this.isPendingRoute)) {
-      setTimeout(() => {
         this.viewContainer.createEmbeddedView(this.templateRef);
         this.hasView = true;
-      });
     }
   }
 }
