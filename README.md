@@ -17,7 +17,3 @@ See Library [homepage](https://mika-el.github.io/angular-loading-page/#/)
 ## Dependencies
 
 * none
-
-## Todos
-
-Add colors params to components
