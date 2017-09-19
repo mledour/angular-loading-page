@@ -1,13 +1,13 @@
-import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef, OnChanges, SimpleChange } from '@angular/core';
 import { HttpObservableService } from './interceptors/http-observable.service';
 import { RouteInterceptorService } from './interceptors/route-interceptor.service';
 
 /*
  * MkLoadingPage Interface
  */
-interface MkLoadingPage {
-    checkPendingHttp: boolean;
-    checkPendingRoute: boolean;
+export interface MkLoadingPage {
+  checkPendingHttp: boolean;
+  checkPendingRoute: boolean;
 }
 
 /*
@@ -16,7 +16,7 @@ interface MkLoadingPage {
 @Directive({
   selector: '[mkLoadingPage]',
 })
-export class LoadingPageDirective {
+export class LoadingPageDirective implements OnChanges {
   public isPendingRequests: boolean;
   public isPendingRoute: boolean;
 
@@ -36,8 +36,19 @@ export class LoadingPageDirective {
     private routeInterceptorService: RouteInterceptorService,
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef
-  ) {
-    this.init();
+  ) {}
+
+  /**
+   * @method ngOnChanges
+   * @param  {SimpleChange}} changes [description]
+   */
+  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
+    if(changes.mkLoadingPage.currentValue) {
+      this.mkLoadingPage = changes.mkLoadingPage.currentValue;
+    }
+    if(changes.mkLoadingPage.firstChange) {
+      this.init();
+    }
   }
 
   /**
@@ -75,8 +86,8 @@ export class LoadingPageDirective {
       this.viewContainer.clear();
       this.hasView = false;
     } else if (!this.hasView && (this.isPendingRequests || this.isPendingRoute)) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-        this.hasView = true;
+      this.viewContainer.createEmbeddedView(this.templateRef);
+      this.hasView = true;
     }
   }
 }
