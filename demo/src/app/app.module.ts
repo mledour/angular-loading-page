@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { LoadingPageModule, ChasingDotsModule, CircleModule, CubeGridModule, DoubleBounceModule, FadingCircleModule, FoldingCubeModule, MaterialBarModule, PulseModule, SlidingBarModule, ThreeBounceModule, WanderingCubesModule, WaveModule } from './src';
+import { LoadingPageModule, MaterialBarModule } from './src';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
