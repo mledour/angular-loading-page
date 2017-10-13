@@ -1,6 +1,6 @@
 # angular-loading-page
 
-Automatic loading page directive & animated loaders components for angular 2+
+Automatic loading page directive & animated loaders components for angular 4+
 
 ## Installation
 
