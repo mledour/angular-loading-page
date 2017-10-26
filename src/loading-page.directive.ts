@@ -59,19 +59,15 @@ export class LoadingPageDirective implements OnChanges {
   private init() {
     if(!this.mkLoadingPage || this.mkLoadingPage.checkPendingHttp) {
       this.httpObservableService.isPendingRequests.subscribe(value =>{
-        setTimeout(() => {
-          this.isPendingRequests = value;
-          this.isVisible();
-        });
+        this.isPendingRequests = value;
+        this.isVisible();
       });
     }
 
     if(!this.mkLoadingPage || this.mkLoadingPage.checkPendingRoute) {
       this.routeInterceptorService.isPendingRoute.subscribe(value =>{
-        setTimeout(() => {
-          this.isPendingRoute = value;
-          this.isVisible();
-        });
+        this.isPendingRoute = value;
+        this.isVisible();
       });
     }
   }
