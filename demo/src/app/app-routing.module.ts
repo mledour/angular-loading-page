@@ -32,12 +32,11 @@ const routes: Routes = [
           icon: ''
         }
       }, {
-        path: 'demos',
-        loadChildren: 'app/+demos/demos.module#DemosModule',
+        path: 'animations',
+        loadChildren: 'app/+animations/animations.module#AnimationsModule',
         data: {
-          title: 'Loaders Demos',
-          description: 'Demos Using loaders',
-          breadcrumb: 'loaders demos',
+          title: 'Animations',
+          breadcrumb: 'animations',
           icon: ''
         }
       }

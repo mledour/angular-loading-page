@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ng-library App', () => {
+describe('angular-loading-page App', () => {
   let page: AppPage;
 
   beforeEach(() => {

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpInterceptorRoutingModule } from './http-interceptor-routing.module';
 import { HttpInterceptorComponent } from './http-interceptor.component';
 
-import { BoxModule } from '../ng-admin-lte';
+import { BoxModule } from 'angular-admin-lte';
 
 @NgModule({
   imports: [

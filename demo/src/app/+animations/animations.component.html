@@ -1,0 +1,157 @@
+<mk-box header="Loaders" [isCollapsable]="false" [isRemovable]="false" contentClasses="no-padding">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>HTML Tag</th>
+        <th>Module Name</th>
+        <th>Options</th>
+        <th>Loader</th>
+      </tr>
+    <tbody>
+      <tr>
+        <td>chasing-dots</td>
+        <td>ChasingDotsModule</td>
+        <td>colorOne, colorTwo</td>
+        <td>
+          <a (click)="toggleLoader('chasingDots')" class="label" [ngClass]="{'label-success': !loaderState.chasingDots, 'label-danger': loaderState.chasingDots}">{{loaderState.chasingDots ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>circle</td>
+        <td>CircleModule</td>
+        <td>color</td>
+        <td>
+          <a (click)="toggleLoader('circle')" class="label" [ngClass]="{'label-success': !loaderState.circle, 'label-danger': loaderState.circle}">{{loaderState.circle ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>cube-grid</td>
+        <td>CubeGridModule</td>
+        <td>color</td>
+        <td>
+          <a (click)="toggleLoader('cubeGrid')" class="label" [ngClass]="{'label-success': !loaderState.cubeGrid, 'label-danger': loaderState.cubeGrid}">{{loaderState.cubeGrid ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>double-bounce</td>
+        <td>DoubleBounceModule</td>
+        <td>colorOne, colorTwo</td>
+        <td>
+          <a (click)="toggleLoader('doubleBounce')" class="label" [ngClass]="{'label-success': !loaderState.doubleBounce, 'label-danger': loaderState.doubleBounce}">{{loaderState.doubleBounce ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>fading-circle</td>
+        <td>FadingCircleModule</td>
+        <td>color</td>
+        <td>
+          <a (click)="toggleLoader('fadingCircle')" class="label" [ngClass]="{'label-success': !loaderState.fadingCircle, 'label-danger': loaderState.fadingCircle}">{{loaderState.fadingCircle ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>folding-cube</td>
+        <td>FoldingCubeModule</td>
+        <td>color</td>
+        <td>
+          <a (click)="toggleLoader('foldingCube')" class="label" [ngClass]="{'label-success': !loaderState.foldingCube, 'label-danger': loaderState.foldingCube}">{{loaderState.foldingCube ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>material-bar</td>
+        <td>MaterialBarModule</td>
+        <td>colorOne, colorTwo, colorThree</td>
+        <td>
+          <a (click)="toggleLoader('materialBar')" class="label" [ngClass]="{'label-success': !loaderState.materialBar, 'label-danger': loaderState.materialBar}">{{loaderState.materialBar ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>pulse</td>
+        <td>PulseModule</td>
+        <td>color</td>
+        <td>
+          <a (click)="toggleLoader('pulse')" class="label" [ngClass]="{'label-success': !loaderState.pulse, 'label-danger': loaderState.pulse}">{{loaderState.pulse ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>sliding-bar</td>
+        <td>SlidingBarModule</td>
+        <td>colorOne, colorTwo</td>
+        <td>
+          <a (click)="toggleLoader('slidingBar')" class="label" [ngClass]="{'label-success': !loaderState.slidingBar, 'label-danger': loaderState.slidingBar}">{{loaderState.slidingBar ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>three-bounce</td>
+        <td>ThreeBounceModule</td>
+        <td>colorOne, colorTwo, colorThree</td>
+        <td>
+          <a (click)="toggleLoader('threeBounce')" class="label" [ngClass]="{'label-success': !loaderState.threeBounce, 'label-danger': loaderState.threeBounce}">{{loaderState.threeBounce ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>wandering-cubes</td>
+        <td>WanderingCubesModule</td>
+        <td>colorOne, colorTwo</td>
+        <td>
+          <a (click)="toggleLoader('wanderingCubes')" class="label" [ngClass]="{'label-success': !loaderState.wanderingCubes, 'label-danger': loaderState.wanderingCubes}">{{loaderState.wanderingCubes ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+      <tr>
+        <td>wave</td>
+        <td>WaveModule</td>
+        <td>color</td>
+        <td>
+          <a (click)="toggleLoader('wave')" class="label" [ngClass]="{'label-success': !loaderState.wave, 'label-danger': loaderState.wave}">{{loaderState.wave ? 'Stop' : 'Play'}}</a>
+        <td>
+      </tr>
+    </tbody>
+  </table>
+</mk-box>
+
+<mk-box header="Chasing Dots" *ngIf="loaderState.chasingDots" [isCollapsable]="false" [isRemovable]="false">
+  <mk-chasing-dots></mk-chasing-dots>
+</mk-box>
+
+<mk-box header="Circle" *ngIf="loaderState.circle" [isCollapsable]="false" [isRemovable]="false">
+  <mk-circle></mk-circle>
+</mk-box>
+
+<mk-box header="Cube Grid" *ngIf="loaderState.cubeGrid" [isCollapsable]="false" [isRemovable]="false">
+  <mk-cube-grid></mk-cube-grid>
+</mk-box>
+
+<mk-box header="Double Bounce" *ngIf="loaderState.doubleBounce" [isCollapsable]="false" [isRemovable]="false">
+  <mk-double-bounce></mk-double-bounce>
+</mk-box>
+
+<mk-box header="Fading Circle" *ngIf="loaderState.fadingCircle" [isCollapsable]="false" [isRemovable]="false">
+  <mk-fading-circle></mk-fading-circle>
+</mk-box>
+
+<mk-box header="Folding Cube" *ngIf="loaderState.foldingCube" [isCollapsable]="false" [isRemovable]="false">
+  <mk-folding-cube></mk-folding-cube>
+</mk-box>
+
+<mk-box header="Material Bar" *ngIf="loaderState.materialBar" [isCollapsable]="false" [isRemovable]="false">
+  <mk-material-bar></mk-material-bar>
+</mk-box>
+
+<mk-box header="Pulse" *ngIf="loaderState.pulse" [isCollapsable]="false" [isRemovable]="false">
+  <mk-pulse></mk-pulse>
+</mk-box>
+
+<mk-box header="Sliding Bar" *ngIf="loaderState.slidingBar" [isCollapsable]="false" [isRemovable]="false">
+  <mk-sliding-bar></mk-sliding-bar>
+</mk-box>
+
+<mk-box header="Three Bounce" *ngIf="loaderState.threeBounce" [isCollapsable]="false" [isRemovable]="false">
+  <mk-three-bounce></mk-three-bounce>
+</mk-box>
+
+<mk-box header="Wandering Cubes" *ngIf="loaderState.wanderingCubes" [isCollapsable]="false" [isRemovable]="false">
+  <mk-wandering-cubes></mk-wandering-cubes>
+</mk-box>
+
+<mk-box header="Wave" *ngIf="loaderState.wave" [isCollapsable]="false" [isRemovable]="false">
+  <mk-wave></mk-wave>
+</mk-box>

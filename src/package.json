@@ -1,6 +1,6 @@
 {
   "name": "angular-loading-page",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/mika-el/angular-loading-page"
@@ -10,19 +10,16 @@
     "email": "michael.ledour@gmail.com"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "angular 4",
+    "angular 5",
+    "typescript"
   ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mika-el/angular-loading-page/issues"
   },
-  "main": "angular-loading-page.umd.js",
-  "module": "angular-loading-page.js",
-  "jsnext:main": "angular-loading-page.js",
-  "typings": "angular-loading-page.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "@angular/core": ">=4.0.0"
   }
 }

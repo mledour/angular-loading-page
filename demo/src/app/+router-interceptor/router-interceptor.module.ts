@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterInterceptorRoutingModule } from './router-interceptor-routing.module';
 import { RouterInterceptorComponent } from './router-interceptor.component';
 
-import { BoxModule } from '../ng-admin-lte';
+import { BoxModule } from 'angular-admin-lte';
 
 @NgModule({
   imports: [
