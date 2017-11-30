@@ -1,4 +1,4 @@
-# angular-admin-lte
+# angular-loading-page
 
 An automatic Angular loading directive & loading animated indicators components for Angular 4+
 
