@@ -70,7 +70,6 @@
     "karma-jasmine-html-reporter": "1.0.0",
     "ng-packagr": "2.4.4",
     "protractor": "5.3.1",
-    "rxjs-compat": "^6.1.0",
     "ts-node": "6.0.3",
     "tslint": "5.10.0",
     "typescript": "2.7.2"
