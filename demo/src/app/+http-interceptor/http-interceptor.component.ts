@@ -1,8 +1,10 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
+
 
 declare var Prism;
 
@@ -15,7 +17,7 @@ export class HttpInterceptorComponent implements AfterViewInit {
   public response;
 
   constructor(
-    private http: Http
+    private http: HttpClient
   ) {}
 
   /**
@@ -42,9 +44,10 @@ export class HttpInterceptorComponent implements AfterViewInit {
    * @method get
    * @return {Observable<any>} [description]
    */
-  public get(): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/photos')
-      .map(this.handleResponse);
+  public get() {
+    // return this.http.get('https://jsonplaceholder.typicode.com/photos')
+    // .map(this.handleResponse);
+    return this.http.get('https://jsonplaceholder.typicode.com/photos', {responseType: 'text'});
   }
 
   /**
