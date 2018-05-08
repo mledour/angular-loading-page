@@ -1,47 +1,40 @@
 import { Injectable, Injector } from '@angular/core';
-import { Http, XHRBackend, ConnectionBackend, RequestOptions, RequestOptionsArgs, Response, Headers, Request } from '@angular/http';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { HttpObservableService } from './http-observable.service';
+import { finalize } from 'rxjs/operators';
 
 @Injectable()
-export class HttpInterceptorService extends Http {
+export class HttpInterceptorService implements HttpInterceptor {
   private httpObservableService: HttpObservableService;
 
   /**
    * @method constructor
-   * @param  {ConnectionBackend} connectionBackend [description]
-   * @param  {RequestOptions}    requestOptions    [description]
+   * @param  {Injector}    injector    [description]
    */
-  constructor(connectionBackend: ConnectionBackend, requestOptions: RequestOptions, private injector: Injector) {
-    super(connectionBackend, requestOptions);
+  constructor(private injector: Injector) {
     this.httpObservableService = injector.get(HttpObservableService);
   }
 
   /**
-   * [request description]
-   * @method request
-   * @param  {string            |       Request}     url [description]
-   * @param  {RequestOptionsArgs}   options [description]
-   * @return {Observable<Response>}         [description]
+   * @method intercept
+   * @param HttpRequest   request   [description]
+   * @param HttpHandler   next   [description]
    */
-  request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.httpObservableService.onRequestStart();
 
-    return super.request(url, options).finally(() => {
-      this.httpObservableService.onRequestDone();
-    });
+    return next.handle(request).pipe(
+      finalize(() => {
+        this.httpObservableService.onRequestDone();
+      })
+    );
   }
 }
 
-/**
- * [httpInterceptorServiceFactory description]
- * @method httpInterceptorServiceFactory
- * @param  {XHRBackend}                  xhrBackend     [description]
- * @param  {RequestOptions}              requestOptions [description]
- * @return {Http}                                       [description]
- */
-export function httpInterceptorServiceFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, injector: Injector): Http {
-    return new HttpInterceptorService(xhrBackend, requestOptions, injector);
+
+export function HttpInterceptorServiceFactory(injector: Injector): HttpInterceptorService {
+  return new HttpInterceptorService(injector);
 }
