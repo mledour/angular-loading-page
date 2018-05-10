@@ -15,20 +15,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng-packagr -p ng-packagr.json"
+    "build:lib": "ng-packagr -p src/ng-package.json"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/mika-el/angular-loading-page.git"
-  },
-  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
-  "ngPackage": {
-    "src": "src",
-    "dest": "dist",
-    "workingDirectory": ".ng_build",
-    "lib": {
-      "entryFile": "index.ts"
-    }
   },
   "private": false,
   "dependencies": {
@@ -68,7 +59,7 @@
     "karma-coverage-istanbul-reporter": "1.4.2",
     "karma-jasmine": "1.1.2",
     "karma-jasmine-html-reporter": "1.0.0",
-    "ng-packagr": "2.4.4",
+    "ng-packagr": "^2.4.4",
     "protractor": "5.3.1",
     "ts-node": "6.0.3",
     "tslint": "5.10.0",

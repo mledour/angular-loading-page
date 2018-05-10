@@ -15,7 +15,7 @@ import {
   SlidingBarModule,
   ThreeBounceModule,
   WanderingCubesModule, WaveModule
-} from '../../../../src';
+} from '../../../../src/index';
 
 @NgModule({
   imports: [

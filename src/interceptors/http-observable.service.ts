@@ -12,7 +12,7 @@ export class HttpObservableService {
   /**
    * [isPendingRequests description]
    * @method isPendingRequests
-   * @return {Observable<boolean>} [description]
+   * @return [description]
    */
   get isPendingRequests(): Observable<boolean> {
     return this._isPendingRequestsSubject.asObservable();
@@ -21,12 +21,12 @@ export class HttpObservableService {
   /**
    * [pendingRequests description]
    * @method pendingRequests
-   * @return {number}        [description]
+   * @return [description]
    */
   get pendingRequests(): number {
     return this._pendingRequestsCounter;
   }
-  
+
   /**
    * [onRequestStart description]
    * @method onRequestStart

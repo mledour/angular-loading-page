@@ -9,8 +9,8 @@ export class RouteInterceptorService {
 
   /**
    * @method constructor
-   * @param  {ConnectionBackend} connectionBackend [description]
-   * @param  {RequestOptions}    requestOptions    [description]
+   * @param  connectionBackend [description]
+   * @param  requestOptions    [description]
    */
   constructor(@Optional() private router: Router) {
     if(this.router) {
@@ -23,7 +23,7 @@ export class RouteInterceptorService {
   /**
    * [isPendingRoute description]
    * @method isPendingRoute
-   * @return {Observable<boolean>} [description]
+   * @return [description]
    */
   get isPendingRoute(): Observable<boolean> {
     return this._isPendingRouteSubject.asObservable();
@@ -32,7 +32,7 @@ export class RouteInterceptorService {
   /**
    * [routerInterceptor description]
    * @method routerInterceptor
-   * @param  {RouterEvent}     event [description]
+   * @param event [description]
    */
   private routerInterceptor(event: RouterEvent): void {
     if(event instanceof NavigationStart) {

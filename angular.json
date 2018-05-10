@@ -18,7 +18,7 @@
             "polyfills": "demo/src/polyfills.ts",
             "assets": [
               { "glob": "**/*", "input": "demo/src/assets/", "output": "/assets/" },
-              { "glob": "favicon.ico", "input": "demo/src", "output": "/" },
+              { "glob": "favicon.ico", "input": "demo/src", "output": "/" }
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",

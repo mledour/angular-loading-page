@@ -12,7 +12,7 @@ export class HttpInterceptorService implements HttpInterceptor {
 
   /**
    * @method constructor
-   * @param  {Injector}    injector    [description]
+   * @param injector [description]
    */
   constructor(private injector: Injector) {
     this.httpObservableService = injector.get(HttpObservableService);
@@ -20,8 +20,8 @@ export class HttpInterceptorService implements HttpInterceptor {
 
   /**
    * @method intercept
-   * @param HttpRequest   request   [description]
-   * @param HttpHandler   next   [description]
+   * @param request [description]
+   * @param next [description]
    */
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.httpObservableService.onRequestStart();
