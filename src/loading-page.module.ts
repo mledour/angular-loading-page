@@ -1,31 +1,41 @@
 import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule, Http, ConnectionBackend, XHRBackend, RequestOptions } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RouteInterceptorService } from './interceptors/route-interceptor.service';
-import { httpInterceptorServiceFactory } from './interceptors/http-interceptor.service';
+import { HttpInterceptorService, HttpInterceptorServiceFactory } from './interceptors/http-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpObservableService } from './interceptors/http-observable.service';
 
 import { LoadingPageDirective } from './loading-page.directive';
 
+const HttpInterceptorServiceExistingProvider = {
+  provide: HTTP_INTERCEPTORS,
+  useExisting: HttpInterceptorService,
+  multi: true
+};
+
 @NgModule({
   imports: [
     CommonModule,
-    HttpModule
+    HttpClientModule
   ],
   declarations: [
     LoadingPageDirective
   ],
   exports: [
-    HttpModule,
+    HttpClientModule,
     LoadingPageDirective
   ],
   providers: [
     RouteInterceptorService,
     HttpObservableService,
-    { provide: Http,
-      useFactory: httpInterceptorServiceFactory,
-      deps: [XHRBackend, RequestOptions, Injector] }
+    HttpInterceptorServiceExistingProvider,
+    {
+      provide: HttpInterceptorService,
+      useFactory: HttpInterceptorServiceFactory,
+      deps: [Injector]
+    }
   ]
 })
 export class LoadingPageModule {}

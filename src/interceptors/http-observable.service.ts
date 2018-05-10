@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/finally';
+import { Observable ,  Subject } from 'rxjs';
+
 
 
 @Injectable()
@@ -13,7 +12,7 @@ export class HttpObservableService {
   /**
    * [isPendingRequests description]
    * @method isPendingRequests
-   * @return {Observable<boolean>} [description]
+   * @return [description]
    */
   get isPendingRequests(): Observable<boolean> {
     return this._isPendingRequestsSubject.asObservable();
@@ -22,12 +21,12 @@ export class HttpObservableService {
   /**
    * [pendingRequests description]
    * @method pendingRequests
-   * @return {number}        [description]
+   * @return [description]
    */
   get pendingRequests(): number {
     return this._pendingRequestsCounter;
   }
-  
+
   /**
    * [onRequestStart description]
    * @method onRequestStart

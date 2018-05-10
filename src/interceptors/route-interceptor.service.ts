@@ -1,8 +1,7 @@
 import { Injectable, Optional } from '@angular/core';
 import { Router, Event as RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router'
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable ,  Subject } from 'rxjs';
 
 @Injectable()
 export class RouteInterceptorService {
@@ -10,8 +9,8 @@ export class RouteInterceptorService {
 
   /**
    * @method constructor
-   * @param  {ConnectionBackend} connectionBackend [description]
-   * @param  {RequestOptions}    requestOptions    [description]
+   * @param  connectionBackend [description]
+   * @param  requestOptions    [description]
    */
   constructor(@Optional() private router: Router) {
     if(this.router) {
@@ -24,7 +23,7 @@ export class RouteInterceptorService {
   /**
    * [isPendingRoute description]
    * @method isPendingRoute
-   * @return {Observable<boolean>} [description]
+   * @return [description]
    */
   get isPendingRoute(): Observable<boolean> {
     return this._isPendingRouteSubject.asObservable();
@@ -33,7 +32,7 @@ export class RouteInterceptorService {
   /**
    * [routerInterceptor description]
    * @method routerInterceptor
-   * @param  {RouterEvent}     event [description]
+   * @param event [description]
    */
   private routerInterceptor(event: RouterEvent): void {
     if(event instanceof NavigationStart) {

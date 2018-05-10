@@ -26,10 +26,10 @@ export class LoadingPageDirective implements OnChanges {
 
   /**
    * @method constructor
-   * @param  {HttpObservableService}   privatehttpObservableService   [description]
-   * @param  {RouteInterceptorService} privaterouteInterceptorService [description]
-   * @param  {TemplateRef<any>}        privatetemplateRef             [description]
-   * @param  {ViewContainerRef}        privateviewContainer           [description]                                              [description]
+   * @param privatehttpObservableService   [description]
+   * @param privaterouteInterceptorService [description]
+   * @param privatetemplateRef             [description]
+   * @param privateviewContainer           [description]                                              [description]
    */
   constructor(
     private httpObservableService: HttpObservableService,
@@ -40,7 +40,7 @@ export class LoadingPageDirective implements OnChanges {
 
   /**
    * @method ngOnChanges
-   * @param  {SimpleChange}} changes [description]
+   * @param changes [description]
    */
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
     if(changes.mkLoadingPage.currentValue) {
@@ -54,7 +54,7 @@ export class LoadingPageDirective implements OnChanges {
   /**
    * [init description]
    * @method init
-   * @return {[type]} [description]
+   * @return [description]
    */
   private init() {
     if(!this.mkLoadingPage || this.mkLoadingPage.checkPendingHttp) {
@@ -75,7 +75,7 @@ export class LoadingPageDirective implements OnChanges {
   /**
    * [isVisible description]
    * @method isVisible
-   * @return {[type]}  [description]
+   * @return [description]
    */
   private isVisible() {
     if(this.hasView && !this.isPendingRequests && !this.isPendingRoute) {
