@@ -1,24 +1,31 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "library",
   "projects": {
-    "angular-loading-page": {
+    "angular-loading-page-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "projectType": "application",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "demo/dist",
-            "index": "demo/src/index.html",
-            "main": "demo/src/main.ts",
-            "tsConfig": "demo/src/tsconfig.app.json",
-            "polyfills": "demo/src/polyfills.ts",
+            "outputPath": "dist/angular-loading-page-demo",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
             "assets": [
-              { "glob": "**/*", "input": "demo/src/assets/", "output": "/assets/" },
-              { "glob": "favicon.ico", "input": "demo/src", "output": "/" }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",
@@ -26,7 +33,7 @@
               "node_modules/prismjs/themes/prism-tomorrow.css",
               "node_modules/admin-lte/dist/css/AdminLTE.css",
               "node_modules/admin-lte/dist/css/skins/_all-skins.css",
-              "demo/src/styles.css"
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/prismjs/prism.js",
@@ -35,19 +42,29 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [
+              "budgets": [
                 {
-                  "replace": "demo/src/environments/environment.ts",
-                  "with": "demo/src/environments/environment.prod.ts"
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -56,76 +73,96 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-loading-page:build"
+            "browserTarget": "angular-loading-page-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-loading-page:build:production"
+              "browserTarget": "angular-loading-page-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-loading-page:build"
+            "browserTarget": "angular-loading-page-demo:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "demo/src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "demo/src/polyfills.ts",
-            "tsConfig": "demo/src/tsconfig.spec.json",
-            "scripts": [
-              "node_modules/prismjs/prism.js",
-              "node_modules/prismjs/components/prism-typescript.js"
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "node_modules/font-awesome/css/font-awesome.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/prismjs/themes/prism-tomorrow.css",
-              "node_modules/admin-lte/dist/css/AdminLTE.css",
-              "node_modules/admin-lte/dist/css/skins/_all-skins.css",
-              "demo/src/styles.css"
+              "src/styles.css"
             ],
-            "assets": [
-              "demo/src/assets",
-              "demo/src/favicon.ico"
-            ]
+            "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "demo/src/tsconfig.app.json",
-              "demo/src/tsconfig.spec.json"
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        }
-      }
-    },
-    "angular-loading-page-e2e": {
-      "root": "",
-      "sourceRoot": "",
-      "projectType": "application",
-      "architect": {
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-loading-page:serve"
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "angular-loading-page-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-loading-page-demo:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "angular-loading-page": {
+      "projectType": "library",
+      "root": "library/angular-loading-page",
+      "sourceRoot": "library/angular-loading-page/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "library/angular-loading-page/tsconfig.lib.json",
+            "project": "library/angular-loading-page/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "library/angular-loading-page/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "library/angular-loading-page/src/test.ts",
+            "tsConfig": "library/angular-loading-page/tsconfig.spec.json",
+            "karmaConfig": "library/angular-loading-page/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "e2e/tsconfig.e2e.json"
+              "library/angular-loading-page/tsconfig.lib.json",
+              "library/angular-loading-page/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -135,14 +172,5 @@
       }
     }
   },
-  "defaultProject": "angular-loading-page",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "css"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  }
+  "defaultProject": "angular-loading-page-demo"
 }

@@ -1,0 +1,33 @@
+{
+  "name": "angular-loading-page",
+  "version": "4.0.0",
+  "homepage": "https://github.com/mledour/angular-loading-page#README.md",
+  "author": {
+    "name": "Mik@",
+    "email": "michael.ledour@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mledour/angular-loading-page"
+  },
+  "bugs": {
+    "url": "https://github.com/mledour/angular-loading-page/issues"
+  },
+  "keywords": [
+    "angular",
+    "angular 2",
+    "angular 4",
+    "angular 5",
+    "angular 6",
+    "angular 7",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^11.0.9",
+    "@angular/core": "^11.0.9"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
